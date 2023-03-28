@@ -1,0 +1,55 @@
+<div class="contenedorDialog">
+<form  [formGroup]="form" (ngSubmit)="editar(dataParaModal.tipo,dataParaModal.id)">
+    <h1 mat-dialog-title>Editar {{dataParaModal.titulo}}</h1>   
+    <div mat-dialog-content>      
+      <mat-form-field appearance="fill"  >    
+        <mat-label>Nombre</mat-label>
+        <input matInput formControlName="nombre" value="{{dataParaModal.nombre}}">
+      </mat-form-field> 
+    </div> 
+    <div mat-dialog-content *ngIf="tipoC">      
+      <mat-form-field appearance="fill"  >    
+        <mat-label>Precio</mat-label>
+        <input matInput formControlName="precio" value="{{dataParaModal.precio}}">
+      </mat-form-field> 
+    </div> 
+    <mat-form-field appearance="fill"  *ngIf="tipoC">
+      <mat-label>Categoria</mat-label>
+      <mat-select formControlName="categoria" [(value)]="selected">
+        <div *ngFor="let item of dataCategorias"> 
+           <mat-option  value="{{item._id}}" >{{item.nombre}}</mat-option>   
+        </div> 
+      </mat-select>
+    </mat-form-field>  
+    <div mat-dialog-content *ngIf="tipoUsuer">      
+      <mat-form-field appearance="fill"  >    
+        <mat-label>Correo</mat-label>
+        <input matInput formControlName="correo" value="{{dataParaModal.correo}}">
+      </mat-form-field> 
+    </div>  
+    <div mat-dialog-content *ngIf="tipoUsuer">  
+      <mat-form-field appearance="fill"  >    
+        <mat-label>Rol</mat-label>
+        <mat-select formControlName="rol" [(value)]="dataParaModal.rol">
+          <mat-option  value="{{dataParaModal.rol}}" >{{dataParaModal.rol}}</mat-option>  
+        </mat-select>
+        <!-- <input matInput formControlName="estado" value="{{dataParaModal.estado}}"> -->
+      </mat-form-field>
+    </div> 
+    <div mat-dialog-content *ngIf="tipoUsuer">      
+      <mat-form-field appearance="fill"  >    
+        <mat-label>Estado</mat-label>
+        <mat-select formControlName="estado" [(value)]="selectedEstado">
+          <mat-option  value="false" >False</mat-option> 
+          <mat-option  value="true" >True</mat-option>   
+        </mat-select>
+        <!-- <input matInput formControlName="estado" value="{{dataParaModal.estado}}"> -->
+      </mat-form-field> 
+    </div> 
+    <div mat-dialog-actions>
+      <button mat-button type="submit" cdkFocusInitial class="btnEditar">Aceptar</button>
+      <button mat-button mat-dialog-close class="btnCancelar">Cancelar</button>
+    </div>
+  </form>
+  </div>
+  

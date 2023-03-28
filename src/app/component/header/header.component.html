@@ -1,0 +1,33 @@
+<body>
+    <header>
+        <ul>
+            <li *ngIf="!_login.logadoIn.value; else SesionIniciada " ><a  routerLink="login" routerLinkActive="active-link">Login</a></li>  
+            <li *ngIf="isAdmin; else viewisAdmin " ></li>
+            <li><a  routerLink="/productos" routerLinkActive="active-link">Productos</a></li>
+            <li><a  routerLink="/categorias" routerLinkActive="active-link">Categorias</a></li>
+        </ul>
+    </header>
+</body>
+
+<ng-template #SesionIniciada>
+    <li>
+        <button mat-icon-button [matMenuTriggerFor]="menu">
+            <mat-icon>person</mat-icon>
+        </button>
+    </li>
+</ng-template>
+
+<ng-template  #viewisAdmin>
+    <li><a routerLink="/usuarios" routerLinkActive="active-link">Usuarios</a></li>
+</ng-template>
+
+<mat-menu #menu="matMenu">
+    <div class="contenedorMenu">
+        <mat-icon class="icono">person</mat-icon>      
+        <mat-label class="nombreUsuario">{{nombreUsuario}}</mat-label>        
+        <mat-label  class="rolUsuario">{{rolUsuario}}</mat-label>
+        <button class="butonCerrar"   (click)="ButonCerrarSesion()" color="accent">
+            <span> Cerrar sesión </span>
+        </button>
+    </div>
+</mat-menu>

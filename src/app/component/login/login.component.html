@@ -1,0 +1,17 @@
+<div class="comtenedor-app">    
+    <div class="example-container">  
+        <img src="../../../assets/imagen/thaiLogin.png" alt="thaiLogin" class="thaiLogin">
+        <img src="../../../assets/imagen/pimenton.png" alt="pimenton" class="pimenton">
+        <h1> <p> * </p>  Ingrear a la pagina  <p> * </p> </h1>
+        <img src="../../../assets/imagen/repollo.png" alt="repollo" class="repollo">
+         <mat-form-field appearance="fill" [formGroup]="user">
+            <mat-label>Correo electronico</mat-label>
+            <input  matInput formControlName="email" placeholder="pat@ejemplo.com">
+        </mat-form-field>     
+        <mat-form-field appearance="fill" [formGroup]="user">
+            <mat-label>Contraseña</mat-label>
+            <input type="password" matInput formControlName="password" placeholder="Contraseña" > 
+        </mat-form-field>
+        <button mat-raised-button color="primary" (click)="validador()">Ingresar</button>
+    </div>
+</div>

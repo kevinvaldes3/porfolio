@@ -1,0 +1,73 @@
+//#424242; gris
+//#f24949; rojo
+//aliceblue; para letras
+
+.comtenedor-app {
+  display: flex;
+  justify-content: center;
+  padding-top: 6em;
+  align-items: center;
+  width: 100%;
+  //height: 100%;
+}
+
+.example-container {
+  width: 600px;
+  background-color: #424242;
+  height: 450px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  -webkit-box-shadow: 1px 1px 7px 0px rgba(0, 0, 0, 1);
+  -moz-box-shadow: 1px 1px 7px 0px rgba(0, 0, 0, 1);
+  box-shadow: 1px 1px 7px 0px rgba(0, 0, 0, 1);
+
+  .thaiLogin{
+    position: absolute;
+    margin: 0px 0px 29em -39em;
+  }
+
+  .pimenton{
+    width: 245px;
+    position: absolute;
+    margin: 0 0 72px 40em;
+  }
+
+  .repollo{
+    position: absolute;
+    margin: 28em 22em 0 0;
+  }
+
+  h1 {
+    display: flex;
+    margin-bottom: 2em;
+    color: aliceblue;
+    text-transform: uppercase;
+    font-weight: 500;
+
+    p {
+      color: #f24949;
+    }
+  }
+
+  button {
+    width: 118px;
+    margin-top: 6em;
+    background-color: #f24949;
+  }
+
+  .mat-input-element {
+    color: #e1e1e1;
+  }
+}
+
+::ng-deep .mat-form-field {
+  width: 62%;
+  //border: 0.1px solid #6c6969;
+
+  .mat-form-field-label {
+    color: aliceblue !important;
+  }
+}

@@ -1,0 +1,146 @@
+.contenedorCategoria {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+
+.contenedorPresentacion {
+    display: flex;
+    width: 100%;
+    height: 29em;
+    background-color: #424242;
+
+    .image {
+        position: relative;
+        padding-left: 200px;
+        width: 28em;
+
+        img {
+            width: 28em;
+            height: auto;
+        }
+    }
+
+    .presentacion {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 48%;
+
+        h1 {
+            font-size: 60px;
+            font-weight: bold;
+            color: aliceblue;
+        }
+
+        h6 {
+            font-size: 20px;
+            font-weight: 500;
+        }
+    }
+
+    .botonAgregarCategoria {
+        display: flex;
+        flex-direction: row-reverse;
+        align-items: flex-start;
+        width: 24em;
+        padding-top: 42px;
+
+        .mat-button {
+            background-color: #f24949;
+            color: aliceblue;
+            text-transform: capitalize;
+
+            .mat-icon {
+                color: aliceblue;
+            }
+        }
+    }
+
+    form {
+        position: absolute;
+        margin: 23em 0 0 102em;
+
+        .mat-form-field {
+            width: 26em;
+            border: 1px solid #f24949;
+            box-shadow: inset 1px 1px 83px -23px rgb(255 255 255);
+        }
+
+    }
+}
+
+.contenedorCard {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    margin: 2%;
+    width: 100%;
+    flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+    -webkit-flex-wrap: wrap;
+    //background-color: #424242;
+    //position: relative;
+}
+
+
+::ng-deep .mat-card {
+    width: 300px;
+    //height: 89px;
+    position: initial !important;
+    margin: 10px;
+    // height: auto;
+    // padding: 2em;
+    background-color: #424242;
+    //color: black;
+    // margin: 10px;
+
+    .tomates {
+        position: absolute;
+        width: 79px;
+        margin-left: 250px;
+        margin-top: -25px;
+    }
+
+    .pimenton {
+        position: absolute;
+        width: 79px;
+        margin-left: -37px;
+        //margin-top: -25px;
+    }
+
+    .cebolla {
+        position: absolute;
+        width: 79px;
+        margin-left: 250px;
+        margin-top: -25px;
+    }
+
+    .contenedorDelaCard {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 8px 0px;
+        width: 100%;
+
+        .btnEditar {
+            background-color: black;
+            color: aliceblue;
+            font-weight: 500;
+        }
+
+        .btnEeliminar {
+            background-color: #f24949;
+            color: aliceblue;
+            font-weight: 500;
+        }
+    }
+
+    .prueba {
+        display: block;
+        background: #424242;
+    }
+}

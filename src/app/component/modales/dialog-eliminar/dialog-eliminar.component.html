@@ -1,0 +1,12 @@
+<div class="contenedorDialog">
+    <h1 mat-dialog-title>Seguro Deseas Eliminar {{dataParaModal.titulo}}</h1>   
+    <div mat-dialog-content>   
+      <h2>{{dataParaModal.nombre}}</h2>
+      <h4 *ngIf="tipoUsuer">{{dataParaModal.correo}}</h4>         
+    </div> 
+    <div mat-dialog-actions>
+      <button mat-button mat-dialog-close cdkFocusInitial class="btnEliminar" (click)="eliminar(dataParaModal.tipo,dataParaModal.id)" >Eliminar</button>
+      <button mat-button mat-dialog-close class="btnCancelar">Cancelar</button>
+    </div>
+</div>
+  

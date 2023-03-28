@@ -1,0 +1,93 @@
+a {
+    color: rgb(80, 79, 79);
+    text-decoration: none;
+}
+
+body {
+    width: 100%;
+    height: 5em;
+    background-color: #fff;
+}
+
+header {
+    padding: 15px;
+    position: relative;
+
+    ul {
+        display: flex;
+        align-items: center;
+        margin: 0;
+        flex-direction: row-reverse;
+
+        li {
+            text-decoration: none;
+            list-style: none;
+            margin-right: 20px;
+
+            a {
+                font-size: 20px;
+                color: #6c6969;
+                font-weight: bold;
+            }
+
+            a:hover{
+                color: #f24949;
+                font-weight: none;
+            }
+            .active-link {
+                color: #f24949 !important;
+                text-decoration: revert;
+            }
+
+            button {
+                //background-color: rgb(75, 112, 6);
+                border: 2px solid #f24949;
+                color: #6c6969;
+                background: #ffffffc7;
+            }
+
+        }
+    }
+}
+
+
+.contenedorMenu {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 219px;
+    height: 125px;
+    color: #fff;
+    margin: 10px;
+
+    .icono {
+        width: 40px;
+        height: 40px;
+        background-color: #fff;
+        color: #6c6969;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .nombreUsuario {
+        font-size: 20px;
+        margin-top: 10px;
+    }
+
+    .rolUsuario {
+        font-size: 12px;
+    }
+
+    .butonCerrar {
+        background-color: #f24949;
+        color: #fff;
+        width: 50%;
+        height: 33px;
+        padding: 0px;
+        margin-top: 10px;
+    }
+
+
+}

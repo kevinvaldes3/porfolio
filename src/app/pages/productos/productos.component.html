@@ -1,0 +1,31 @@
+<div class="contenedorProductos">
+  <div class="contenedorPresentacion">
+    <div class="image">
+      <img src="../../../assets/imagen/productos.png" alt="">
+    </div>
+    <div class="presentacion">
+      <h1>PRODUCTOS</h1>
+      <H6>PLATOS QUE LLENAN TU ALMA</H6>
+    </div>
+    <div class="botonAgregarProducto" *ngIf="isAdmin">
+      <button mat-button (click)="openDialog(dataParaDialogo)"><mat-icon>add</mat-icon> Agregar Producto</button>
+    </div>
+  </div>
+  <div class="contenedorCard">
+    <mat-card *ngFor="let item of productos">
+      <div class="contenedorDelaCard">
+        <mat-card-header>
+          <mat-card-title>{{item.nombre}}</mat-card-title>
+          <mat-card-subtitle>{{ item.categoria.nombre}}</mat-card-subtitle>
+        </mat-card-header>
+        <mat-card-content>
+          <p>Precio - ${{item.precio}}</p>
+        </mat-card-content>
+        <mat-card-actions *ngIf="isAdmin">
+          <button mat-button class="btnEditar" (click)="editarCategoria(item._id)">Editar</button>
+          <button mat-button class="btnEeliminar" (click)="eliminarCategoria(item._id)">Eliminar</button>
+        </mat-card-actions>
+      </div>
+    </mat-card>
+  </div>
+</div>

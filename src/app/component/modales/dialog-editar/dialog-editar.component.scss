@@ -1,0 +1,70 @@
+form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+::ng-deep .mat-dialog-container {
+    background-color: #ffffff;
+    padding: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    height: 550px;
+}
+
+::ng-deep .mat-dialog-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;   
+    width: 32em;
+    margin: 5px;
+    //height: 17em;
+}
+
+::ng-deep .mat-label {
+    color: #6c6969;
+}
+
+::ng-deep .mat-form-field {
+    width: 99%;
+    border: 0.1px solid #6c6969;
+    width: 31.7em;
+    .mat-form-field-label {
+        color: #6c6969 !important;
+    }
+
+    .mat-select-value-text{
+        color: #6c6969 !important;
+    }
+}
+
+::ng-deep .mat-dialog-actions {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    .mat-button {
+        font-weight: 500;
+    }
+    .btnEditar{
+        background-color: #6c6969;
+        color: #ffffff;
+    }
+    .btnCancelar{
+        background-color: #f24949;
+        color: #ffffff; 
+    }
+}
+
+
+
+.contenedorDialog {
+    color: #6c6969;
+
+    h1 {
+        text-transform: uppercase;
+        font-weight: bold;
+    }
+}

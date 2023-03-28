@@ -1,0 +1,14 @@
+<div class="contenedorDialog">
+    <h1 mat-dialog-title>Agregar una Categoria Nueva</h1>   
+    <div mat-dialog-content>      
+      <mat-form-field appearance="fill" [formGroup]="form">    
+        <mat-label >Nombre</mat-label>
+        <input matInput formControlName="nombre">
+      </mat-form-field>     
+    </div> 
+    <div mat-dialog-actions>
+      <button mat-button cdkFocusInitial class="btnAgregar" (click)="addCarateristica()">Agregar</button>
+      <button mat-button mat-dialog-close class="btnCancelar">Cancelar</button>
+    </div>
+</div>
+  

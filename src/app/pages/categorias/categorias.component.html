@@ -1,0 +1,46 @@
+<div class="contenedorCategoria">
+  <div class="contenedorPresentacion">
+    <div class="image">
+      <img src="../../../assets/imagen/categorias1.png" alt="">
+    </div>
+    <div class="presentacion">
+      <h1>CATEGORIAS</h1>
+      <H6>TIPOS DE COMIDAS</H6>
+    </div>
+    <div class="botonAgregarCategoria" *ngIf="isAdmin">
+      <button mat-button (click)="openDialog()"><mat-icon>add</mat-icon> Agregar Categoria</button>
+    </div>
+    <!-- <form class="example-form">
+      <mat-form-field class="example-full-width" appearance="fill">
+        <mat-label>Categoria</mat-label>
+        <input type="text"
+               placeholder="buscar categoria"
+               aria-label="Categoria"
+               matInput
+               [formControl]="myControl"
+               [matAutocomplete]="auto">
+        <mat-autocomplete autoActiveFirstOption #auto="matAutocomplete">
+          <mat-option *ngFor="let option of filteredOptions | async" [value]="option">
+            {{option}}
+          </mat-option>
+        </mat-autocomplete>
+      </mat-form-field>
+    </form> -->
+  </div>
+  <div class="contenedorCard">
+    <mat-card  *ngFor="let item of categorias">
+      <!-- <img src="../../../assets/imagen/pimenton.png" class="pimenton"> -->
+      <div class="contenedorDelaCard">
+        <mat-card-header>
+          <mat-card-title>{{item.nombre}}</mat-card-title>
+        </mat-card-header>
+        <mat-card-actions *ngIf="isAdmin">
+          <button mat-button class="btnEditar" (click)="editarCategoria(item._id)">Editar</button>
+          <button mat-button class="btnEeliminar" (click)="eliminarCategoria(item._id)">Eliminar</button>
+        </mat-card-actions>
+      </div>
+      <!-- <img src="../../../assets/imagen/cebolla.png" class="cebolla"> -->
+      <!-- <img src="../../../assets/imagen/tomates.png" class="tomates"> -->  
+    </mat-card>    
+  </div>
+</div>

@@ -1,0 +1,93 @@
+
+<div class="contenedorMainUsuario">
+  <div class="contenedorPerfil">
+    <div class="imagenPerfil">
+      <div class="imagenCirculo">
+        <img src="../../../assets/imagen/perfilUsuario.png" alt="">
+      </div>
+    </div>
+    <div class="contenidoInfo">
+      <h1>hola</h1>
+      <h2>{{nombreUsuario}}</h2>
+      <h3>{{rolUsuario}}</h3>
+      <h4>{{correoUsuario}}</h4>
+    </div>
+    <div class="containerInfo">
+      <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Exercitationem mollitia vitae ex quidem repudiandae nam hic officiis, veniam quia rem fugiat necessitatibus beatae earum ipsum aut laudantium optio! Libero, accusantium.</p>
+    </div>
+  </div>
+  <div class="contenedorUsuarios">
+    <div class="contenedorPresentacion">
+      <div class="image">
+        <img src="../../../assets/imagen/productos.png" alt="">
+      </div>
+      <div class="presentacion">
+        <h1>USUARIOS</h1>
+        <H6>LA COMUNIDAD</H6>
+      </div>
+      <div class="botonAgregarUsuario" *ngIf="isAdmin">
+        <button mat-button (click)="openDialog()"><mat-icon>add</mat-icon> Agregar Usuario</button>
+      </div>
+    </div>
+    <div class="mat-elevation-z8">
+        <table mat-table [dataSource]="dataSource">
+      
+          <!-- Position Column -->
+          <ng-container matColumnDef="uid">
+            <th mat-header-cell *matHeaderCellDef> No. </th>
+            <td mat-cell *matCellDef="let element of let j = index"> {{j+1}} </td>
+          </ng-container>
+      
+          <!-- Name Column -->
+          <ng-container matColumnDef="nombre">
+            <th mat-header-cell *matHeaderCellDef> Nombre </th>
+            <td mat-cell *matCellDef="let element"> {{element.nombre}} </td>
+          </ng-container>
+      
+          <!-- Weight Column -->
+          <ng-container matColumnDef="correo">
+            <th mat-header-cell *matHeaderCellDef> Correo Electronico </th>
+            <td mat-cell *matCellDef="let element"> {{element.correo}} </td>
+          </ng-container>
+      
+          <!-- Symbol Column -->
+          <ng-container matColumnDef="estado">
+            <th mat-header-cell *matHeaderCellDef> Estado </th>            
+            <td mat-cell *matCellDef="let element"> 
+              <img *ngIf="!element.estado" class="imagenTable" src="../../../assets/imagen/pimentonRojo.png" alt="{{element.estado}} ">
+              <img *ngIf="element.estado" class="imagenTable" src="../../../assets/imagen/pimentonAmarillo.png" alt="{{element.estado}}">             
+            
+            </td>
+          </ng-container>
+          <ng-container matColumnDef="google">
+            <th mat-header-cell *matHeaderCellDef> Google </th>
+            <td mat-cell *matCellDef="let element"> {{element.google}} </td>
+          </ng-container>
+
+          <!-- Symbol Column -->
+          <ng-container matColumnDef="rol">
+            <th mat-header-cell *matHeaderCellDef> Rol </th>
+            <td mat-cell *matCellDef="let element"> {{element.rol == "ADMIN_ROLE" ? 'ADMINISTRADOR' : element.rol}} </td>
+          </ng-container>
+
+          <!-- Symbol Column -->
+          <ng-container matColumnDef="button" >
+            <th mat-header-cell *matHeaderCellDef> Acción </th> 
+            <td mat-cell *matCellDef="let element">
+              <button mat-button class="btnEditar" (click)="editarUsuario(element.uid)" >Editar</button>
+              <button mat-button class="btnEeliminar" (click)="eliminarUsuario(element.uid)" >Eliminar</button> 
+            </td>           
+          </ng-container>
+      
+          <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+          <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+        </table>    
+         <mat-paginator #paginatorPageSize [pageSizeOptions]="[5, 10, 20]"
+                       showFirstLastButtons
+                       aria-label="Selecione pagina de Usuario">
+        </mat-paginator> 
+    </div>
+  </div>
+</div>
+
+  

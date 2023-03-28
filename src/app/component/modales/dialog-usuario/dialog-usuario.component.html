@@ -1,0 +1,31 @@
+<div class="contenedorDialog">
+  <h1 mat-dialog-title>Agregar un Usuario Nuevo</h1>   
+  <div mat-dialog-content>
+    <form  [formGroup]="form" (ngSubmit)="agregarProducto()">
+      <mat-tab-group>
+      </mat-tab-group>
+      <mat-form-field appearance="fill">    
+        <mat-label>Nombre</mat-label>
+        <input matInput formControlName="nombre">
+      </mat-form-field>
+      <mat-form-field appearance="fill">    
+        <mat-label>Correo</mat-label>
+        <input matInput formControlName="correo">
+      </mat-form-field>
+      <mat-form-field appearance="fill">    
+        <mat-label>Contraseña</mat-label>
+        <input  type="password" matInput formControlName="password">
+      </mat-form-field>
+      <mat-form-field appearance="fill">
+        <mat-label>Rol</mat-label>
+        <mat-select formControlName="rol">       
+            <mat-option value="ADMIN_ROLE"> Rol Administrador</mat-option> 
+        </mat-select>
+      </mat-form-field>      
+      <div mat-dialog-actions>
+        <button mat-button type="submit" cdkFocusInitial class="btnAgregar" >Agregar</button>
+        <button mat-button mat-dialog-close class="btnCancelar">Cancelar</button>
+      </div>
+    </form>
+  </div> 
+</div>
